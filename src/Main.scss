@@ -1,0 +1,79 @@
+.videoWrapper {
+  margin-top: -20px;
+}
+
+.outerWrapper {
+  background-color: black;
+  overflow: hidden;
+}
+
+.playerOptions {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 60px;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+}
+
+.playerTitle {
+  width: 100vw;
+  position: absolute;
+  height: 60px;
+  background-color: black;
+  top: 0px;
+  text-align: center;
+  color: white;
+  font-family: 'Georgia, serif';
+  font-style: italic;
+  font-size: 36px;
+}
+
+
+.sideBar {
+  position: absolute;
+  right: 0px;
+  top: 60px;
+  width: 320px;
+  height: calc(100vh - 60px);
+  background-color: black;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  overflow-y: auto;
+}
+
+
+.arrowIn {
+  position: absolute;
+  right: 340px;
+  top: 80px;
+}
+
+.circleIn {
+  position: absolute;
+  right: 340px;
+  top: 80px;
+  height: 50px;
+  width: 50px;
+}
+
+.arrowOut {
+  position: absolute;
+  right: 10px;
+  top: 80px;
+  transform: scaleX(-1);
+}
+
+.circleOut {
+  position: absolute;
+  right: 10px;
+  top: 80px;
+  height: 50px;
+  width: 50px;
+}
+
+.sliderTop {
+  padding-top: 15px;
+}
