@@ -152,6 +152,7 @@ const soundOptions = [
   BASESOUND,
   "Bamboo Forest",
   "Blizzard",
+  "Cafe Jazz & Rain",
   "Campfire & River",
   "Disney Piano",
   "Disney Piano 2",

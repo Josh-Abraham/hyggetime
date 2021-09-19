@@ -5,6 +5,7 @@ import ReactPlayer from "react-player";
 const soundOptions = {
   "Bamboo Forest": "https://www.youtube.com/watch?v=a20ooDY0L0E",
   "Blizzard": "https://www.youtube.com/watch?v=YsmfWkE6FUg",
+  "Cafe Jazz & Rain": "https://www.youtube.com/watch?v=c0_ejQQcrwI",
   "Campfire & River": "https://www.youtube.com/watch?v=Ftm2uv7-Ybw",
   "Disney Piano": "https://www.youtube.com/watch?v=g8NVwN0_mks",
   "Disney Piano 2": "https://www.youtube.com/watch?v=2Mu7LAhxyp8",
