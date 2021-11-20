@@ -7,6 +7,7 @@ const soundOptions = {
   "Blizzard": "https://www.youtube.com/watch?v=YsmfWkE6FUg",
   "Cafe Jazz & Rain": "https://www.youtube.com/watch?v=c0_ejQQcrwI",
   "Campfire & River": "https://www.youtube.com/watch?v=Ftm2uv7-Ybw",
+  "Christmas Music": "https://www.youtube.com/watch?v=aVsoQbm9O3w",
   "Disney Piano": "https://www.youtube.com/watch?v=g8NVwN0_mks",
   "Disney Piano 2": "https://www.youtube.com/watch?v=2Mu7LAhxyp8",
   "Disney Springs": "https://www.youtube.com/watch?v=klOe-e9y0_4",
