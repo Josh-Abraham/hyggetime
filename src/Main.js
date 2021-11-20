@@ -154,6 +154,7 @@ const soundOptions = [
   "Blizzard",
   "Cafe Jazz & Rain",
   "Campfire & River",
+  "Christmas Music",
   "Disney Piano",
   "Disney Piano 2",
   "Disney Springs",
