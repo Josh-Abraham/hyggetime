@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/hyggetime/static/css/main.3ffbd4f2.chunk.css",
+    "main.css": "/hyggetime/static/css/main.87ff7871.chunk.css",
     "main.js": "/hyggetime/static/js/main.56a0b5d6.chunk.js",
     "main.js.map": "/hyggetime/static/js/main.56a0b5d6.chunk.js.map",
     "runtime-main.js": "/hyggetime/static/js/runtime-main.2d812d83.js",
@@ -10,13 +10,13 @@
     "static/js/3.b91ae1c6.chunk.js": "/hyggetime/static/js/3.b91ae1c6.chunk.js",
     "static/js/3.b91ae1c6.chunk.js.map": "/hyggetime/static/js/3.b91ae1c6.chunk.js.map",
     "index.html": "/hyggetime/index.html",
-    "static/css/main.3ffbd4f2.chunk.css.map": "/hyggetime/static/css/main.3ffbd4f2.chunk.css.map",
+    "static/css/main.87ff7871.chunk.css.map": "/hyggetime/static/css/main.87ff7871.chunk.css.map",
     "static/js/2.f757988a.chunk.js.LICENSE.txt": "/hyggetime/static/js/2.f757988a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.2d812d83.js",
     "static/js/2.f757988a.chunk.js",
-    "static/css/main.3ffbd4f2.chunk.css",
+    "static/css/main.87ff7871.chunk.css",
     "static/js/main.56a0b5d6.chunk.js"
   ]
 }
