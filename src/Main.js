@@ -24,13 +24,15 @@ const backgroundJSONOptions = {
   // Winter
   "Christmas at the Burrow": "https://www.youtube.com/watch?v=NSw8epNSVRI",
   "Christmas Coffee Shop": "https://youtu.be/9a9GixtqVP4?t=313",
-  "Christmas Fireplace": "https://www.youtube.com/watch?v=2WgpCWUEexI",
+  "Christmas Fireplace": "https://youtu.be/nZHZGKADNRw?t=102",
+  "Christmas Porch": "https://youtu.be/hQXOYApD-Rs?t=2349",
   "Hogsmeade": "https://www.youtube.com/watch?v=bi4VmbqFJ2Y",
-  "Magic Kingdom Christmas": "https://www.youtube.com/watch?v=RgN4p62qzmA",
+  "Magic Kingdom Christmas": "https://www.youtube.com/watch?v=WXccs2azATQ",
   "Magic Kingdom Cristmas 2": "https://www.youtube.com/watch?v=t4GSiJx6Glo",
   "Snow Fall": "https://youtu.be/jh_KFTYJnDo?t=567",
   "The Yule Ball": "https://www.youtube.com/watch?v=tTfr-0qa3OQ",
   "Winter Chalet": "https://youtu.be/111hKC_4LuY?t=234",
+  "Winter Coffee Shop": "https://youtu.be/twM7ulKpPjI?t=323",
   "Winter Fireplace": "https://www.youtube.com/watch?v=WjOJis4UR44",
   "Winter Fireplace 2": "https://www.youtube.com/watch?v=oakA7RLvmWs",
   "Winter Forest": "https://youtu.be/eS2ssUROF5o?t=215",
@@ -92,12 +94,14 @@ const backgroundOptions = [
       "Christmas at the Burrow",
       "Christmas Coffee Shop",
       "Christmas Fireplace",
+      "Christmas Porch",
       "Hogsmeade",
       "Magic Kingdom Christmas",
       "Magic Kingdom Cristmas 2",
       "Snow Fall",
       "The Yule Ball",
       "Winter Chalet",
+      "Winter Coffee Shop",
       "Winter Fireplace",
       "Winter Fireplace 2",
       "Winter Forest",
@@ -196,7 +200,7 @@ class Main extends Component {
       play: true,
       selectedSounds: [],
       width: window.screen.availWidth,
-      height: window.screen.availHeight - 84,
+      height: window.screen.availHeight,
       baseSound: {
         enabled: false,
         volume: 1
@@ -312,7 +316,7 @@ class Main extends Component {
   onResize(e) {
     this.setState({
       width: e.target.outerWidth,
-      height: e.target.outerHeight - 84,
+      height: e.target.outerHeight,
     });
   }
 
