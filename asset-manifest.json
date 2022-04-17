@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/hyggetime/static/css/main.5cf0d794.chunk.css",
-    "main.js": "/hyggetime/static/js/main.919a733c.chunk.js",
-    "main.js.map": "/hyggetime/static/js/main.919a733c.chunk.js.map",
+    "main.js": "/hyggetime/static/js/main.241a2008.chunk.js",
+    "main.js.map": "/hyggetime/static/js/main.241a2008.chunk.js.map",
     "runtime-main.js": "/hyggetime/static/js/runtime-main.2d812d83.js",
     "runtime-main.js.map": "/hyggetime/static/js/runtime-main.2d812d83.js.map",
     "static/js/2.f757988a.chunk.js": "/hyggetime/static/js/2.f757988a.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.2d812d83.js",
     "static/js/2.f757988a.chunk.js",
     "static/css/main.5cf0d794.chunk.css",
-    "static/js/main.919a733c.chunk.js"
+    "static/js/main.241a2008.chunk.js"
   ]
 }
