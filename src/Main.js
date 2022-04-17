@@ -48,27 +48,38 @@ const backgroundJSONOptions = {
   "Spring Kitchen": "https://youtu.be/m7DW3jxGa8U?t=15",
   "Sunflower Meadow": "https://youtu.be/ipf7ifVSeDU?t=6",
   // Summer
+  "Aulani": "https://www.youtube.com/watch?v=pmW5gjbCggM",
   "Beach Bonfire": "https://youtu.be/Y1y9GAjuSt8?t=24",
+  "Hawaiian Beach": "https://youtu.be/e2tWiI2ipjU?t=45",
   "Hawaiian Sunset": "https://youtu.be/q3J0H5SAhJY?t=18",
+  "Motunui": "https://www.youtube.com/watch?v=gWxNBVo2gZc",
   "Night Cafe": "https://www.youtube.com/watch?v=BA50F2aq9D8",
+  "Sea Turtles in Hawaii": "https://youtu.be/yLuEx-XH3Uc?t=530",
   "Summer Night": "https://youtu.be/SN3xlcjbvUo?t=164",
   "Summer Night Beach House": "https://youtu.be/V65kcs57yhY?t=6",
   "Summer Night Terrace": "https://www.youtube.com/watch?v=yBzR0OL9cqA",
   "Summer Picnic": "https://youtu.be/wSZ0j6eBRpg?t=158",
   "Tropical Beach": "https://www.youtube.com/watch?v=DGIXT7ce3vQ",
   "Waterfall": "https://www.youtube.com/watch?v=V1RPi2MYptM",
-  // Other
-  "Aquarium": "https://www.youtube.com/watch?v=dBsicD0ItD0",
-  "Coral Reef": "https://www.youtube.com/watch?v=tADnCEpbPI8",
-  "Diagon Alley Night": "https://www.youtube.com/watch?v=v0haKQUgxYE",
+  // Disney
+  "Disney's Coral Reef": "https://youtu.be/JxiB4y43uN8?t=139",
   "Disney Springs": "https://youtu.be/Szetlwwd6jw?t=42",
-  "Hogwarts Library": "https://www.youtube.com/watch?v=20XE6GM7xWo",
-  "Hogwarts Library 2": "https://youtu.be/oI9bqFUBJ9E?t=28",
+  "Encanto": "https://youtu.be/eeorll3-Ugw?t=11",
   "Kiss Goodnight": "https://www.youtube.com/watch?v=QqGjuloQGgo",
   "Magic Kingdom": "https://www.youtube.com/watch?v=vnJEjMdQoDw",
   "Magic Kingdom Sunset": "https://www.youtube.com/watch?v=EoZCMGPtZlM",
+  "Pirate of the Caribbean": "https://youtu.be/eSX47ue269Q?t=165",
+  // Harry Potter
+  "Christmas Great Hall": "https://youtu.be/_v4cgUVBsi4?t=60",
+  "Diagon Alley Night": "https://www.youtube.com/watch?v=v0haKQUgxYE",
+  "Hogwarts Express": "https://youtu.be/daCu-ku1v8E?t=141",
+  "Hogwarts Library": "https://www.youtube.com/watch?v=20XE6GM7xWo",
+  "Hogwarts Library 2": "https://youtu.be/oI9bqFUBJ9E?t=28",
   "Potions Class": "https://www.youtube.com/watch?v=J8K3nPP4V-Y",
   "Weasley's Wizard Wheezes": "https://www.youtube.com/watch?v=WxB6hbba8cY",
+  // Other
+  "Aquarium": "https://www.youtube.com/watch?v=dBsicD0ItD0",
+  "Coral Reef": "https://www.youtube.com/watch?v=tADnCEpbPI8",
   "221B Baker Street": "https://www.youtube.com/watch?v=wFrIeXGXEco"
 };
 
@@ -92,6 +103,7 @@ const backgroundOptions = [
     value: "Winter",
     children: [
       "Christmas at the Burrow",
+      "Christmas Great Hall",
       "Christmas Coffee Shop",
       "Christmas Fireplace",
       "Christmas Porch",
@@ -123,9 +135,12 @@ const backgroundOptions = [
   }, {
     value: "Summer",
     children: [
+      "Aulani",
       "Beach Bonfire",
+      "Hawaiian Beach",
       "Hawaiian Sunset",
       "Night Cafe",
+      "Sea Turtles in Hawaii",
       "Summer Night",
       "Summer Night Beach House",
       "Summer Night Terrace",
@@ -134,19 +149,44 @@ const backgroundOptions = [
       "Waterfall",
     ],
   }, {
+    value: "Disney",
+    children: [
+      "Aulani",
+      "Coral Reef",
+      "Disney Springs",
+      "Encanto",
+      "EPCOT Flower Garden Festival",
+      "Kiss Goodnight",
+      "Magic Kingdom",
+      "Magic Kingdom Christmas",
+      "Magic Kingdom Cristmas 2",
+      "Magic Kingdom Halloween",
+      "Magic Kingdom Sunset",
+      "Motunui",
+      "Pirate of the Caribbean"
+    ],
+  }, {
+    value: "Harry Potter",
+    children: [
+      "Christmas at the Burrow",
+      "Christmas Great Hall",
+      "Diagon Alley Night",
+      "Haunted Hogwarts",
+      "Hogsmeade",
+      "Hogwarts Express",
+      "Hogwarts Fall Courtyard",
+      "Hogwarts Library",
+      "Hogwarts Library 2",
+      "Hogwarts Spring Scene",
+      "Potions Class",
+      "The Yule Ball",
+      "Weasley's Wizard Wheezes",
+    ],
+  }, {
     value: "Other",
     children: [
       "Aquarium",
       "Coral Reef",
-      "Diagon Alley Night",
-      "Disney Springs",
-      "Hogwarts Library",
-      "Hogwarts Library 2",
-      "Kiss Goodnight",
-      "Magic Kingdom",
-      "Magic Kingdom Sunset",
-      "Potions Class",
-      "Weasley's Wizard Wheezes",
       "221B Baker Street"
     ],
   }
@@ -198,11 +238,11 @@ class Main extends Component {
       background: "",
       backgroundURL: "",
       play: true,
-      selectedSounds: [],
+      selectedSounds: [{'sound': "Base Sound", 'volume': 1 }],
       width: window.screen.availWidth,
       height: window.screen.availHeight,
       baseSound: {
-        enabled: false,
+        enabled: true,
         volume: 1
       },
       openSide: false
