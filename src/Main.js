@@ -6,230 +6,12 @@ import "./Main.scss";
 import SoundComponent from "./SoundComponent";
 import ReactPlayer from "react-player";
 import SliderComponent from "./SliderComponent";
-
-
-const backgroundJSONOptions = {
-  // Fall
-  "Autumn Forest": "https://www.youtube.com/watch?v=IadsLclBOS8",
-  "Autumn River": "https://www.youtube.com/watch?v=6uhRxK_EOm4",
-  "Fall Coffee Shop": "https://youtu.be/VMAPTo7RVCo?t=1287",
-  "Halloween Party": "https://youtu.be/LmCg6V8e8Jw?t=42",
-  "Halloween Porch": "https://youtu.be/cykFvQ2Y8sM?t=55",
-  "Haunted Hogwarts": "https://www.youtube.com/watch?v=lQ12THXbUE0",
-  "Hogwarts Fall Courtyard": "https://www.youtube.com/watch?v=JVAbQvUSUIY",
-  "Magic Kingdom Halloween": "https://www.youtube.com/watch?v=CYGAXigR_Z8",
-  "Nighttime Porch": "https://www.youtube.com/watch?v=-gKvayYQVcg",
-  "Thanksgiving Kitchen": "https://youtu.be/Xl4aD7b2l-w?t=7",
-  "Witch's Kitchen": "https://www.youtube.com/watch?v=900GFG30Fzg",
-  // Winter
-  "Christmas at the Burrow": "https://www.youtube.com/watch?v=NSw8epNSVRI",
-  "Christmas Coffee Shop": "https://youtu.be/9a9GixtqVP4?t=313",
-  "Christmas Fireplace": "https://youtu.be/nZHZGKADNRw?t=102",
-  "Christmas Porch": "https://youtu.be/hQXOYApD-Rs?t=2349",
-  "Hogsmeade": "https://www.youtube.com/watch?v=bi4VmbqFJ2Y",
-  "Magic Kingdom Christmas": "https://www.youtube.com/watch?v=WXccs2azATQ",
-  "Magic Kingdom Cristmas 2": "https://www.youtube.com/watch?v=t4GSiJx6Glo",
-  "Snow Fall": "https://youtu.be/jh_KFTYJnDo?t=567",
-  "The Yule Ball": "https://www.youtube.com/watch?v=tTfr-0qa3OQ",
-  "Winter Chalet": "https://youtu.be/111hKC_4LuY?t=234",
-  "Winter Coffee Shop": "https://youtu.be/twM7ulKpPjI?t=323",
-  "Winter Fireplace": "https://www.youtube.com/watch?v=WjOJis4UR44",
-  "Winter Fireplace 2": "https://www.youtube.com/watch?v=oakA7RLvmWs",
-  "Winter Forest": "https://youtu.be/eS2ssUROF5o?t=215",
-  // Spring
-  "Cherry Blossoms": "https://youtu.be/o6tmxJPcnsg?t=6",
-  "EPCOT Flower Garden Festival": "https://www.youtube.com/watch?v=seAjL2U6N6o",
-  "English Forest": "https://www.youtube.com/watch?v=IsPBplWLImI",
-  "Greek Seaside": "https://youtu.be/N7SvKKxpVBc?t=131",
-  "Hogwarts Spring Scene": "https://www.youtube.com/watch?v=QQRHobcT1_A",
-  "Mountain View": "https://youtu.be/qRTVg8HHzUo?t=22",
-  "Spring Cafe 1": "https://www.youtube.com/watch?v=MbiTgRzP_2I",
-  "Spring Cafe 2": "https://www.youtube.com/watch?v=-aL6ig2lxrE",
-  "Spring Kitchen": "https://youtu.be/m7DW3jxGa8U?t=15",
-  "Sunflower Meadow": "https://youtu.be/ipf7ifVSeDU?t=6",
-  // Summer
-  "Aulani": "https://www.youtube.com/watch?v=pmW5gjbCggM",
-  "Beach Bonfire": "https://youtu.be/Y1y9GAjuSt8?t=24",
-  "Hawaiian Beach": "https://youtu.be/e2tWiI2ipjU?t=45",
-  "Hawaiian Sunset": "https://youtu.be/q3J0H5SAhJY?t=18",
-  "Motunui": "https://www.youtube.com/watch?v=gWxNBVo2gZc",
-  "Night Cafe": "https://www.youtube.com/watch?v=BA50F2aq9D8",
-  "Sea Turtles in Hawaii": "https://youtu.be/yLuEx-XH3Uc?t=530",
-  "Summer Night": "https://youtu.be/SN3xlcjbvUo?t=164",
-  "Summer Night Beach House": "https://youtu.be/V65kcs57yhY?t=6",
-  "Summer Night Terrace": "https://www.youtube.com/watch?v=yBzR0OL9cqA",
-  "Summer Picnic": "https://youtu.be/wSZ0j6eBRpg?t=158",
-  "Tropical Beach": "https://www.youtube.com/watch?v=DGIXT7ce3vQ",
-  "Waterfall": "https://www.youtube.com/watch?v=V1RPi2MYptM",
-  // Disney
-  "Disney's Coral Reef": "https://youtu.be/JxiB4y43uN8?t=139",
-  "Disney Springs": "https://youtu.be/Szetlwwd6jw?t=42",
-  "Encanto": "https://youtu.be/eeorll3-Ugw?t=11",
-  "Kiss Goodnight": "https://www.youtube.com/watch?v=QqGjuloQGgo",
-  "Magic Kingdom": "https://www.youtube.com/watch?v=vnJEjMdQoDw",
-  "Magic Kingdom Sunset": "https://www.youtube.com/watch?v=EoZCMGPtZlM",
-  "Pirate of the Caribbean": "https://youtu.be/eSX47ue269Q?t=165",
-  // Harry Potter
-  "Christmas Great Hall": "https://youtu.be/_v4cgUVBsi4?t=60",
-  "Diagon Alley Night": "https://www.youtube.com/watch?v=v0haKQUgxYE",
-  "Hogwarts Express": "https://youtu.be/daCu-ku1v8E?t=141",
-  "Hogwarts Library": "https://www.youtube.com/watch?v=20XE6GM7xWo",
-  "Hogwarts Library 2": "https://youtu.be/oI9bqFUBJ9E?t=28",
-  "Potions Class": "https://www.youtube.com/watch?v=J8K3nPP4V-Y",
-  "Weasley's Wizard Wheezes": "https://www.youtube.com/watch?v=WxB6hbba8cY",
-  // Other
-  "Aquarium": "https://www.youtube.com/watch?v=dBsicD0ItD0",
-  "Coral Reef": "https://www.youtube.com/watch?v=tADnCEpbPI8",
-  "221B Baker Street": "https://www.youtube.com/watch?v=wFrIeXGXEco"
-};
-
-const backgroundOptions = [
-  {
-    value: "Fall",
-    children: [
-      "Autumn Forest",
-      "Autumn River",
-      "Fall Coffee Shop",
-      "Halloween Party",
-      "Halloween Porch",
-      "Haunted Hogwarts",
-      "Hogwarts Fall Courtyard",
-      "Magic Kingdom Halloween",
-      "Nighttime Porch",
-      "Thanksgiving Kitchen",
-      "Witch's Kitchen",
-    ],
-  }, {
-    value: "Winter",
-    children: [
-      "Christmas at the Burrow",
-      "Christmas Great Hall",
-      "Christmas Coffee Shop",
-      "Christmas Fireplace",
-      "Christmas Porch",
-      "Hogsmeade",
-      "Magic Kingdom Christmas",
-      "Magic Kingdom Cristmas 2",
-      "Snow Fall",
-      "The Yule Ball",
-      "Winter Chalet",
-      "Winter Coffee Shop",
-      "Winter Fireplace",
-      "Winter Fireplace 2",
-      "Winter Forest",
-    ],
-  },  {
-    value: "Spring",
-    children: [
-      "Cherry Blossoms",
-      "EPCOT Flower Garden Festival",
-      "English Forest",
-      "Greek Seaside",
-      "Hogwarts Spring Scene",
-      "Mountain View",
-      "Spring Cafe 1",
-      "Spring Cafe 2",
-      "Spring Kitchen",
-      "Sunflower Meadow",
-    ],
-  }, {
-    value: "Summer",
-    children: [
-      "Aulani",
-      "Beach Bonfire",
-      "Hawaiian Beach",
-      "Hawaiian Sunset",
-      "Night Cafe",
-      "Sea Turtles in Hawaii",
-      "Summer Night",
-      "Summer Night Beach House",
-      "Summer Night Terrace",
-      "Summer Picnic",
-      "Tropical Beach",
-      "Waterfall",
-    ],
-  }, {
-    value: "Disney",
-    children: [
-      "Aulani",
-      "Coral Reef",
-      "Disney Springs",
-      "Encanto",
-      "EPCOT Flower Garden Festival",
-      "Kiss Goodnight",
-      "Magic Kingdom",
-      "Magic Kingdom Christmas",
-      "Magic Kingdom Cristmas 2",
-      "Magic Kingdom Halloween",
-      "Magic Kingdom Sunset",
-      "Motunui",
-      "Pirate of the Caribbean"
-    ],
-  }, {
-    value: "Harry Potter",
-    children: [
-      "Christmas at the Burrow",
-      "Christmas Great Hall",
-      "Diagon Alley Night",
-      "Haunted Hogwarts",
-      "Hogsmeade",
-      "Hogwarts Express",
-      "Hogwarts Fall Courtyard",
-      "Hogwarts Library",
-      "Hogwarts Library 2",
-      "Hogwarts Spring Scene",
-      "Potions Class",
-      "The Yule Ball",
-      "Weasley's Wizard Wheezes",
-    ],
-  }, {
-    value: "Other",
-    children: [
-      "Aquarium",
-      "Coral Reef",
-      "221B Baker Street"
-    ],
-  }
-];
-const BASESOUND = 'Base Sound'
-const soundOptions = [
-  BASESOUND,
-  "Bamboo Forest",
-  "Blizzard",
-  "Cafe Jazz & Rain",
-  "Campfire & River",
-  "Christmas Music",
-  "Disney Piano",
-  "Disney Piano 2",
-  "Disney Springs",
-  "EPCOT Area Music",
-  "Fall Leaves",
-  "Fireplace",
-  "Forest Sounds",
-  "Jungle Sounds",
-  "Hollywood Studios Area Music",
-  "Large Waterfall",
-  "Light Rain",
-  "Light Snow",
-  "Magic Kingdom Area Music",
-  "Mandalorian Music",
-  "Narnia Winter Music",
-  "Nighttime Forest",
-  "Small Waterfall",
-  "Snow & Wind",
-  "Soft Waves",
-  "Stream",
-  "Summer Night",
-  "Thunder",
-  "Tropical House",
-  "Waves",
-  "Wind",
-  "Winter at Hogwarts",
-  "Wizarding World Area Music",
-  "Yiruma"
-];
-
-
+import { 
+  backgroundJSONOptions, 
+  backgroundOptions, 
+  BASESOUND, 
+  soundOptions 
+} from "./constants.js";
 
 class Main extends Component {
   constructor() {
@@ -257,8 +39,6 @@ class Main extends Component {
     this.volumeChange = this.volumeChange.bind(this);
   }
 
-  // fetchSounds()
-
   getDropDown() {
     return (
       <LayeredSelect
@@ -268,7 +48,6 @@ class Main extends Component {
         handleChange={this.handleBackgroundDropdown}
         currentSelection={this.state.background}
       />
-      
     );
   }
 
@@ -300,28 +79,27 @@ class Main extends Component {
         volume: 1
       }
       this.setState({baseSound: baseSound})
-
     }
-      let index = -1;
-      let i = 0;
-      for (const elem of this.state.selectedSounds) {
-        if (elem['sound'] === newSelection) {
-          index = i;
-          break;
-        }
-        i++;
+
+    let index = -1;
+    let i = 0;
+    for (const elem of this.state.selectedSounds) {
+      if (elem['sound'] === newSelection) {
+        index = i;
+        break;
       }
-      const newList = [...this.state.selectedSounds];
-      if (index > -1) {
-        newList.splice(index, 1);
-      } else {
-        const newSelectionObj = {'sound': newSelection, 'volume': 1 }
-        newList.push(newSelectionObj);
-      }
-      this.setState({
-        selectedSounds: newList,
-      });
-    
+      i++;
+    }
+    const newList = [...this.state.selectedSounds];
+    if (index > -1) {
+      newList.splice(index, 1);
+    } else {
+      const newSelectionObj = {'sound': newSelection, 'volume': 1 }
+      newList.push(newSelectionObj);
+    }
+    this.setState({
+      selectedSounds: newList,
+    });
   }
 
   pause() {
@@ -341,6 +119,7 @@ class Main extends Component {
       if (soundData['sound'] !== BASESOUND) {
         return (
           <SoundComponent
+            key={soundData['sound']}
             sound={soundData['sound']}
             volume={soundData['volume']}
             playing={this.state.play}
@@ -365,7 +144,6 @@ class Main extends Component {
   }
 
   volumeChange(index, volume) {
-    
     const newList = [...this.state.selectedSounds];
     const newSound = newList[index];
     newList.splice(index, 1);
@@ -392,6 +170,7 @@ class Main extends Component {
       i += 1;
       return (
         <SliderComponent
+          key={soundData['sound']}
           index={i}
           onChange={this.volumeChange}
           sound={soundData['sound']}
@@ -402,21 +181,22 @@ class Main extends Component {
 
     return sliders;
   }
+
   getSidePanel() {
     if (this.state.openSide) {
       const sliders = this.getSliders();
 
       return (
         <div>
-        <div className="sideBar"> 
-        Volume Mixer
-        <div className="sliderTop">
-          {sliders}
-        </div>          
-        </div>
-        <svg height="50" width="50" className="circleIn">
-          <circle cx="25" cy="25" r="25" fill="white" />
-        </svg>
+          <div className="sideBar"> 
+            Volume Mixer
+            <div className="sliderTop">
+              {sliders}
+            </div>          
+          </div>
+          <svg height="50" width="50" className="circleIn">
+            <circle cx="25" cy="25" r="25" fill="white" />
+          </svg>
           <img 
             src="https://www.shareicon.net/data/512x512/2015/10/17/657431_arrows_512x512.png" 
             alt="" 
@@ -429,9 +209,9 @@ class Main extends Component {
     }
     return (
       <div onClick={this.arrowClicked}> 
-      <svg height="50" width="50" className="circleOut">
-        <circle cx="25" cy="25" r="25" fill="white" />
-      </svg>
+        <svg height="50" width="50" className="circleOut">
+          <circle cx="25" cy="25" r="25" fill="white" />
+        </svg>
         <img 
           src="https://www.shareicon.net/data/512x512/2015/10/17/657431_arrows_512x512.png" 
           alt="" 
@@ -484,4 +264,5 @@ class Main extends Component {
     );
   }
 }
+
 export default Main;

@@ -1,77 +1,73 @@
-import React, { Component } from 'react';
-import {InputLabel, FormControl, Select, Input } from '@material-ui/core';
+import React from 'react';
+import { InputLabel, FormControl, Select, Input } from '@mui/material';
 import DropdownSelect from '../DropdownSelect';
-import Proptypes from 'prop-types';
-import { ThemeProvider } from '@material-ui/styles';
+import PropTypes from 'prop-types';
+import { ThemeProvider } from '@mui/material/styles';
 import './LayeredSelect.scss';
 import { theme } from '../constants';
 import { v4 as uuidv4 } from 'uuid';
-class LayeredSelect extends Component {
-  constructor(props) {
-    super(props);
-    this.handleChange = this.handleChange.bind(this);
-  }
 
-  createMenuItems(){
-    const options = this.props.dropdownOptions.map((obj) =>
-      {
-        const currentSelection = this.props.currentSelection in obj.children ? this.props.currentSelection : '';
-        const menuItem =
+const LayeredSelect = ({ 
+  dropdownOptions = [], 
+  dropdownName = '', 
+  handleChange, 
+  currentSelection 
+}) => {
+  const createMenuItems = () => {
+    const options = dropdownOptions.map((obj) => {
+      const currentSelectionExists = currentSelection in obj.children ? currentSelection : '';
+      const menuItem = (
         <DropdownSelect
-        id='innerDD'
-        key={uuidv4()}
-        dropdownOptions={obj.children}
-        dropdownName={obj.value}
-        handleChange={this.props.handleChange}
-        currentSelection={currentSelection}
+          id='innerDD'
+          key={uuidv4()}
+          dropdownOptions={obj.children}
+          dropdownName={obj.value}
+          handleChange={handleChange}
+          currentSelection={currentSelectionExists}
         />
-          return menuItem;
-      }
-    );
+      );
+      return menuItem;
+    });
     return options;
-  }
+  };
 
-  handleChange(e) {
+  const handleSelectChange = (e) => {
     const newSelection = e.target.value;
-    this.props.handleChange(newSelection)
-  }
+    handleChange(newSelection);
+  };
 
-  render() {
-    const menuOptions = this.createMenuItems();
-    return(
-      <div  className='dropdownWrapper'>
-        <ThemeProvider theme={theme}>
-          <FormControl className='dropdownSelect'>
-            <InputLabel id={`Dropdown_${this.props.dropdownName}`} color="primary"
-            style={{"fontSize": '16px'}}
-            >
-                {this.props.dropdownName}
-            </InputLabel>
-          <Select
-            id={`Dropdown_Select_${this.props.dropdownName}`}
-            value={[]}
-            input={<Input />}
-            onChange={this.handleChange}
+  const menuOptions = createMenuItems();
+  
+  return (
+    <div className='dropdownWrapper'>
+      <ThemeProvider theme={theme}>
+        <FormControl className='dropdownSelect'>
+          <InputLabel 
+            id={`Dropdown_${dropdownName}`} 
+            color="primary"
+            style={{ fontSize: '16px' }}
           >
-          {menuOptions}
+            {dropdownName}
+          </InputLabel>
+          <Select
+            id={`Dropdown_Select_${dropdownName}`}
+            value={currentSelection || ''}
+            input={<Input />}
+            onChange={handleSelectChange}
+          >
+            {menuOptions}
           </Select>
         </FormControl>
-        </ThemeProvider>
-      </div>
-    );
-  }
-}
-
-LayeredSelect.defaultProps = {
-  dropdownOptions: [],
-  dropdownName: '',
-}
+      </ThemeProvider>
+    </div>
+  );
+};
 
 LayeredSelect.propTypes = {
- dropdownOptions: Proptypes.array,
- dropdownName: Proptypes.string,
- handleChange: Proptypes.func.isRequired,
- currentSelection: Proptypes.string.isRequired
-}
+  dropdownOptions: PropTypes.array,
+  dropdownName: PropTypes.string,
+  handleChange: PropTypes.func.isRequired,
+  currentSelection: PropTypes.string.isRequired
+};
 
 export default LayeredSelect;

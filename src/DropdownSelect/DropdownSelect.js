@@ -1,72 +1,68 @@
-import React, { Component } from 'react';
-import {InputLabel, MenuItem, FormControl, Select } from '@material-ui/core';
-import Proptypes from 'prop-types';
-import { ThemeProvider } from '@material-ui/styles';
+import React from 'react';
+import { InputLabel, MenuItem, FormControl, Select } from '@mui/material';
+import PropTypes from 'prop-types';
+import { ThemeProvider } from '@mui/material/styles';
 import './DropdownSelect.scss';
 import { theme } from '../constants';
 
-class DropdownSelect extends Component {
-  constructor(props) {
-    super(props);
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  createMenuItems(){
-    const options = this.props.dropdownOptions.map((obj) =>
-      {
-        const menuItem =
-          <MenuItem
-            id={obj}
-            key={obj}
-            value={obj}
-           >{`${obj}`}
-          </MenuItem>
-          return menuItem;
-      }
-    );
+const DropdownSelect = ({ 
+  dropdownOptions = [], 
+  dropdownName = '', 
+  handleChange, 
+  currentSelection 
+}) => {
+  const createMenuItems = () => {
+    const options = dropdownOptions.map((obj) => {
+      const menuItem = (
+        <MenuItem
+          id={obj}
+          key={obj}
+          value={obj}
+        >
+          {`${obj}`}
+        </MenuItem>
+      );
+      return menuItem;
+    });
     return options;
-  }
+  };
 
-  handleChange(e) {
+  const handleSelectChange = (e) => {
     const newSelection = e.target.value;
-    this.props.handleChange(newSelection)
-  }
+    handleChange(newSelection);
+  };
 
-  render() {
-    const menuOptions = this.createMenuItems();
-    return(
-      <div  className='dropdownWrapper'>
-        <ThemeProvider theme={theme}>
-          <FormControl className='dropdownSelect'>
-            <InputLabel id={`Dropdown_${this.props.dropdownName}`} color="primary"
-            style={{"fontSize": '16px'}}
-            >
-                {this.props.dropdownName}
-            </InputLabel>
-          <Select
-            id={`Dropdown_Select_${this.props.dropdownName}`}
-            value={this.props.currentSelection}
-            onChange={this.handleChange}
+  const menuOptions = createMenuItems();
+  
+  return (
+    <div className='dropdownWrapper'>
+      <ThemeProvider theme={theme}>
+        <FormControl className='dropdownSelect'>
+          <InputLabel 
+            id={`Dropdown_${dropdownName}`} 
+            color="primary"
+            style={{ fontSize: '16px' }}
           >
-          {menuOptions}
+            {dropdownName}
+          </InputLabel>
+          <Select
+            id={`Dropdown_Select_${dropdownName}`}
+            value={currentSelection}
+            onChange={handleSelectChange}
+          >
+            {menuOptions}
           </Select>
         </FormControl>
-        </ThemeProvider>
-      </div>
-    );
-  }
-}
-
-DropdownSelect.defaultProps = {
-  dropdownOptions: [],
-  dropdownName: '',
-}
+      </ThemeProvider>
+    </div>
+  );
+};
 
 DropdownSelect.propTypes = {
- dropdownOptions: Proptypes.array,
- dropdownName: Proptypes.string,
- handleChange: Proptypes.func.isRequired,
- currentSelection: Proptypes.string.isRequired
-}
+  dropdownOptions: PropTypes.array,
+  dropdownName: PropTypes.string,
+  handleChange: PropTypes.func.isRequired,
+  currentSelection: PropTypes.string.isRequired
+};
 
 export default DropdownSelect;
