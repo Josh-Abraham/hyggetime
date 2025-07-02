@@ -23,7 +23,6 @@ const MultiSelect = ({ sounds = [], soundSelections = [], handleChange }) => {
             id="demo-mutiple-checkbox-label"
             style={{ fontSize: '16px' }}
           >
-            Background Sounds
           </InputLabel>
           <Select
             labelId="demo-mutiple-checkbox-label"

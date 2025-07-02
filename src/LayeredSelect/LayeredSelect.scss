@@ -1,15 +1,53 @@
-.dropdownWrapper{
-  min-width: 180px;
-  padding-right: 20px;
-  //padding-top: 20px;
+.dropdownWrapper {
+  min-width: 160px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
   .dropdownSelect {
     width: 100%;
+    position: relative;
+    
+    select {
+      width: 100%;
+      padding: 8px 12px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      color: white;
+      font-size: 14px;
+      backdrop-filter: blur(10px);
+      transition: all 0.2s ease;
+      appearance: none;
+      cursor: pointer;
+      
+      &:focus {
+        outline: none;
+        background: rgba(255, 255, 255, 0.15);
+        border-color: rgba(255, 255, 255, 0.4);
+        box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.3);
+      }
+      
+      &:hover {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+      
+      option {
+        background: #1a1a1a;
+        color: white;
+        padding: 8px;
+      }
+    }
+    
     .tooltipWrapper {
       position: relative;
-      display: inline-block;
+      display: block;
+      width: 100%;
+      
       .icon {
-        margin-left: 190px;
-        font-size: 20px;
+        display: none; // Hide the old icon since we're using ::after
       }
     }
   }
