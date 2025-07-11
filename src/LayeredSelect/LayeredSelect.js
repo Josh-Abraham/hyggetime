@@ -56,7 +56,7 @@ const LayeredSelect = ({
   // Memoize menu items creation to prevent unnecessary re-renders
   const menuOptions = useMemo(() => {
     return dropdownOptions.map((obj) => {
-      const currentSelectionExists = currentSelection in obj.children ? currentSelection : '';
+      const currentSelectionExists = currentSelection && obj.children && (currentSelection in obj.children) ? currentSelection : '';
       
       return (
         <StableDropdownSelect
@@ -73,7 +73,7 @@ const LayeredSelect = ({
   return (
     <div className='dropdownWrapper'>
       <ThemeProvider theme={theme}>
-        <FormControl className='dropdownSelect'>
+        <FormControl className='dropdownSelect' style={{ minWidth: 200, width: 200 }}>
           <InputLabel 
             id={`Dropdown_${dropdownName}`} 
             color="primary"
@@ -88,7 +88,17 @@ const LayeredSelect = ({
             open={open}
             onOpen={handleOpen}
             onClose={handleClose}
-            onChange={handleSelectChange}
+            onChange={() => {}} // Disable native change handling
+            displayEmpty
+            renderValue={(selected) => {
+              // Find the display text for the selected value
+              for (const obj of dropdownOptions) {
+                if (obj.children && obj.children[selected]) {
+                  return obj.children[selected];
+                }
+              }
+              return selected || '';
+            }}
             MenuProps={{
               // Prevent menu from closing unexpectedly
               disableScrollLock: true,

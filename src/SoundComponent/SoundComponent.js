@@ -7,7 +7,7 @@ const soundOptions = {
   "Blizzard": "https://www.youtube.com/watch?v=YsmfWkE6FUg",
   "Cafe Jazz & Rain": "https://www.youtube.com/watch?v=c0_ejQQcrwI",
   "Campfire & River": "https://www.youtube.com/watch?v=Ftm2uv7-Ybw",
-  "Christmas Music": "https://www.youtube.com/watch?v=9a9GixtqVP4",
+  "Christmas Music": "https://www.youtube.com/watch?v=hPz7h_XK9EQ",
   "Disney Piano": "https://www.youtube.com/watch?v=g8NVwN0_mks",
   "Disney Piano 2": "https://www.youtube.com/watch?v=2Mu7LAhxyp8",
   "Disney Springs": "https://www.youtube.com/watch?v=klOe-e9y0_4",
@@ -21,21 +21,27 @@ const soundOptions = {
   "Light Rain": "https://www.youtube.com/watch?v=7JyE47-Ykjo",
   "Light Snow": "https://www.youtube.com/watch?v=vz91QpgUjFc",
   "Magic Kingdom Area Music": "https://www.youtube.com/watch?v=CYGAXigR_Z8",
-  "Mandalorian Music": "https://www.youtube.com/watch?v=A872Muk-gYA",
+  
   "Narnia Winter Music": "https://www.youtube.com/watch?v=5RHTt4_XVVU",
   "Nighttime Forest": "https://www.youtube.com/watch?v=PVV4-2G0t3k",
   "Small Waterfall": "https://youtu.be/02NQkhbjALg?t=388",
   "Snow & Wind": "https://www.youtube.com/watch?v=oakA7RLvmWs",
   "Soft Waves": "https://www.youtube.com/watch?v=ec_xGmM_tJc",
   "Stream": "https://youtu.be/UJZxtO9XNno?t=375",
-  "Summer Night": "https://www.youtube.com/watch?v=eKmRkS1os7k",
+  'Seaside Piano': "https://www.youtube.com/watch?v=0-orslgOSiE",
+  "Summer Night": "https://www.youtube.com/watch?v=Q7R-1b1WEGQ",
   "Thunder": "https://www.youtube.com/watch?v=yMRoNNKWuqQ",
   "Tropical House": "https://www.youtube.com/watch?v=0D0LMWf93pU",
   "Waves": "https://www.youtube.com/watch?v=Nep1qytq9JM",
   "Wind": "https://www.youtube.com/watch?v=lWULd19LvaY",
   "Winter at Hogwarts": "https://www.youtube.com/watch?v=oE-pXV-G9aY",
   "Wizarding World Area Music": "https://www.youtube.com/watch?v=F6am4iEDez0",
-  "Yiruma": "https://www.youtube.com/watch?v=9L5cdoBPryY"
+  "Lilo & Stitch Soundscape": "https://www.youtube.com/watch?v=tbQ8yLIZePo",
+  "Little Mermaid Soundscape": "https://www.youtube.com/watch?v=Kd0H572nTno",
+  "Lion King Soundscape": "https://www.youtube.com/watch?v=Rx_Fp0sdXz8",
+  "Disney Parks Soundscape": "https://www.youtube.com/watch?v=INppObmqIk8",
+  "Haunted Mansion Soundscape": "https://www.youtube.com/watch?v=BuhiXmnMYPA",
+  "WDW Today Channel": "https://www.youtube.com/watch?v=-LqPzc9bYe0"
 };
 class SoundComponent extends Component {
   render() {
