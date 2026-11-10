@@ -1,0 +1,38 @@
+@use '../styles/tokens' as *;
+
+.seek-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 8px;
+}
+
+.seek-time {
+  min-width: 44px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+
+  &:last-child { text-align: right; }
+}
+
+.seek-slider.MuiSlider-root {
+  height: 4px;
+  padding: 10px 0;
+  color: $accent;
+
+  .MuiSlider-rail { background: $text; opacity: 0.3; }
+
+  .MuiSlider-thumb {
+    width: 0;
+    height: 0;
+    transition: all 0.15s ease;
+  }
+
+  &:hover .MuiSlider-thumb,
+  .MuiSlider-thumb.Mui-active {
+    width: 14px;
+    height: 14px;
+  }
+}

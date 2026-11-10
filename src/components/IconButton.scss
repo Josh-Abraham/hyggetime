@@ -1,0 +1,23 @@
+@use '../styles/tokens' as *;
+
+.icon-button {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $surface;
+  border: none;
+  border-radius: 50%;
+  color: $text;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+
+  &:hover {
+    background: $surface-hover;
+    transform: scale(1.05);
+  }
+
+  &:active { transform: scale(0.95); }
+}

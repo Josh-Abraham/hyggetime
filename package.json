@@ -6,48 +6,29 @@
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
-    "@mui/icons-material": "^6.1.6",
-    "@mui/material": "^6.1.6",
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.0.1",
-    "@testing-library/user-event": "^14.5.2",
+    "@mui/icons-material": "^7.0.0",
+    "@mui/material": "^7.0.0",
     "gh-pages": "^6.2.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "prop-types": "^15.8.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "react-player": "^2.16.0",
-    "react-scripts": "5.0.1",
-    "sass": "^1.81.0",
-    "use-sound": "^4.0.3",
-    "web-vitals": "^4.2.4"
+    "sass": "^1.81.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "start:https": "cross-env HTTPS=true react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "deploy": "gh-pages -d build",
+    "republish": "./republish.sh"
   },
   "devDependencies": {
-    "cross-env": "^7.0.3"
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.0.0"
+  },
+  "allowScripts": {
+    "@parcel/watcher@2.5.1": true,
+    "esbuild@0.25.12": true
   }
 }

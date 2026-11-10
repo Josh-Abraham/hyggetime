@@ -1,0 +1,54 @@
+$accent: #ff6b6b;
+$accent-hover: #ff5252;
+$success: #4caf50;
+$success-hover: #45a049;
+
+$text: #fff;
+$text-muted: rgba(255, 255, 255, 0.7);
+$text-faint: rgba(255, 255, 255, 0.6);
+
+$surface: rgba(255, 255, 255, 0.1);
+$surface-hover: rgba(255, 255, 255, 0.2);
+$border: rgba(255, 255, 255, 0.1);
+$border-strong: rgba(255, 255, 255, 0.2);
+
+$font-serif: Georgia, 'Times New Roman', serif;
+$breakpoint-tablet: 768px;
+$breakpoint-phone: 480px;
+
+@mixin glass($background: rgba(0, 0, 0, 0.8), $blur: 20px) {
+  background: $background;
+  backdrop-filter: blur($blur);
+}
+
+// Controls that slide out of view when hidden (auto-hide in fullscreen)
+@mixin slide-away($direction: -100%) {
+  transition: all 0.3s ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &.hidden {
+    opacity: 0;
+    transform: translateY($direction);
+  }
+}
+
+@mixin thin-scrollbar {
+  &::-webkit-scrollbar { width: 6px; }
+  &::-webkit-scrollbar-track { background: $surface; border-radius: 3px; }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+
+    &:hover { background: rgba(255, 255, 255, 0.5); }
+  }
+}
+
+@mixin brand-title($size) {
+  font: italic 400 #{$size} $font-serif;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}

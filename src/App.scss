@@ -1,0 +1,64 @@
+@use './styles/tokens' as *;
+
+.app {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background: #000;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.video-container {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+// YouTube draws the video title and channel across the top of its player. Make the player taller
+// than the screen and shift it up so that strip lands off-screen; the video stays centered.
+.scene-player {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.9s ease;
+
+  &.ready { opacity: 1; }
+}
+
+.scene-player iframe {
+  --crop: clamp(72px, 12vh, 140px);
+  display: block;
+  height: calc(100% + 2 * var(--crop));
+  margin-top: calc(-1 * var(--crop));
+}
+
+// Catches clicks meant for the video so our state, not the YouTube iframe, decides play/pause
+.video-click-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+}
+
+// Darken the edges so controls stay readable over bright video
+.gradient-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  pointer-events: none;
+
+  &.top {
+    top: 0;
+    height: 120px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+  }
+
+  &.bottom {
+    bottom: 0;
+    height: 150px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 50%, transparent 100%);
+  }
+}
