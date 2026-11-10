@@ -20,8 +20,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "republish": "./republish.sh"
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.4",
