@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import IconButton from './IconButton';
 import SeekBar from './SeekBar';
-import { BookmarkIcon, PauseIcon, PlayIcon, WaveIcon } from './icons';
+import { BookmarkIcon, DropIcon, PauseIcon, PlayIcon, WaveIcon } from './icons';
 import { getThumbnailUrl } from '../utils/youtube';
 import './BottomControls.scss';
 
@@ -13,7 +13,7 @@ const summarize = (names) => {
 
 const BottomControls = ({
   visible, player, sceneName, sceneUrl, ambientSounds, playing,
-  onOpenGallery, onOpenSounds, onSaveMix, onTogglePlay,
+  effectsAvailable, effectLabel, onOpenGallery, onOpenSounds, onOpenEffects, onSaveMix, onTogglePlay,
 }) => {
   const thumbnail = getThumbnailUrl(sceneUrl);
 
@@ -41,6 +41,18 @@ const BottomControls = ({
             </span>
           </button>
 
+          {effectsAvailable && (
+            <button className="dock-card" onClick={onOpenEffects} title="Weather">
+              <span className={`dock-thumb dock-icon ${effectLabel ? 'active' : ''}`}>
+                <DropIcon width={20} height={20} />
+              </span>
+              <span className="dock-text">
+                <small>Weather</small>
+                <strong>{effectLabel || 'Add weather'}</strong>
+              </span>
+            </button>
+          )}
+
           <IconButton title="Save this mix" onClick={onSaveMix}><BookmarkIcon /></IconButton>
 
           <button
@@ -63,8 +75,11 @@ BottomControls.propTypes = {
   sceneUrl: PropTypes.string,
   ambientSounds: PropTypes.arrayOf(PropTypes.string).isRequired,
   playing: PropTypes.bool.isRequired,
+  effectsAvailable: PropTypes.bool,
+  effectLabel: PropTypes.string,
   onOpenGallery: PropTypes.func.isRequired,
   onOpenSounds: PropTypes.func.isRequired,
+  onOpenEffects: PropTypes.func,
   onSaveMix: PropTypes.func.isRequired,
   onTogglePlay: PropTypes.func.isRequired,
 };

@@ -57,11 +57,80 @@
   &:hover { background: rgba(255, 255, 255, 0.2); }
 }
 
+.scene-toolbar {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin: 24px 0 20px;
+}
+
 .scene-tabs {
   display: flex;
+  flex: 1;
   gap: 8px;
   flex-wrap: wrap;
-  margin: 24px 0 20px;
+}
+
+.scene-search {
+  position: relative;
+  flex: 0 0 260px;
+
+  svg {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    transform: translateY(-50%);
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.55);
+    stroke-width: 2;
+    stroke-linecap: round;
+    pointer-events: none;
+  }
+
+  input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 36px 8px 38px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.06);
+    color: $text;
+    font: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease, background 0.2s ease;
+
+    &::placeholder { color: rgba(255, 255, 255, 0.45); }
+    &:focus { border-color: rgba(255, 255, 255, 0.5); background: rgba(255, 255, 255, 0.1); }
+    // The clear button below replaces the browser's own
+    &::-webkit-search-cancel-button { display: none; }
+  }
+}
+
+.scene-search-clear {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  width: 26px;
+  height: 26px;
+  transform: translateY(-50%);
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+
+  &:hover { background: rgba(255, 255, 255, 0.15); color: $text; }
+}
+
+.scene-empty {
+  margin: 8px 0 0;
+  color: $text-faint;
+  font-size: 15px;
 }
 
 .scene-tab {
@@ -150,10 +219,19 @@
   .scene-gallery { padding: 20px 16px; }
   .scene-gallery-header h2 { font-size: 26px; }
 
-  // One swipeable row of tabs instead of four wrapped lines
+  // Search on its own row above one swipeable row of tabs
+  .scene-toolbar {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 12px;
+    margin: 16px 0 14px;
+  }
+
+  .scene-search { flex: none; }
+
   .scene-tabs {
     flex-wrap: nowrap;
-    margin: 16px -16px 14px;
+    margin: 0 -16px;
     padding: 0 16px 4px;
     overflow-x: auto;
     scrollbar-width: none;

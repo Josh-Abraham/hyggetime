@@ -59,6 +59,21 @@ const mixDefinitions = [
     scene: 'Magic Kingdom Sunset',
     sounds: [sound(BASE_SOUND, 0.5), sound('Magic Kingdom Area Music', 0.5), sound('Summer Night', 0.3)],
   },
+  // Mixes can also set a weather effect (a preset id from effects/presets.js); the scene must offer it
+  {
+    id: 'starter-rainy-nook',
+    name: 'Rainy Reading Nook',
+    scene: 'Gothic Reading Nook',
+    effect: 'lightRain',
+    sounds: [sound(BASE_SOUND, 0.4), sound('Light Rain', 0.6), sound('Fireplace', 0.5)],
+  },
+  {
+    id: 'starter-autumn-rain',
+    name: 'Autumn Rain',
+    scene: 'Autumn Forest',
+    effect: 'lightRain',
+    sounds: [sound(BASE_SOUND, 0.5), sound('Light Rain', 0.6), sound('Stream', 0.3)],
+  },
   {
     id: 'starter-cozy-christmas',
     name: 'Cozy Christmas',

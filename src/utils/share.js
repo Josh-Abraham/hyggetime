@@ -1,15 +1,18 @@
 import { sceneUrls } from '../data/scenes';
 import { BASE_SOUND, soundUrls } from '../data/sounds';
+import { isEffectPreset } from '../effects/presets';
 import { isValidYouTubeUrl } from './youtube';
 
 const toPercent = (volume) => Math.round(Math.max(0, Math.min(1, volume)) * 100);
 
 // Link that reopens the current scene and sounds:
-// #scene=Rainy+Castle&base=40&sounds=Light+Rain:80|Fireplace:60   (or video=<youtube url> for custom videos)
-export const encodeSharedMix = (scene, sounds) => {
+// #scene=Rainy+Castle&base=40&sounds=Light+Rain:80|Fireplace:60&effect=lightRain
+// (or video=<youtube url> for custom videos). effect is optional, so older links still work.
+export const encodeSharedMix = (scene, sounds, effect = '') => {
   const params = new URLSearchParams();
   if (sceneUrls[scene.name] === scene.url) params.set('scene', scene.name);
   else params.set('video', scene.url);
+  if (effect) params.set('effect', effect);
 
   const base = sounds.find((s) => s.sound === BASE_SOUND);
   if (base) params.set('base', toPercent(base.volume));
@@ -47,5 +50,8 @@ export const decodeSharedMix = (hash) => {
     }
   });
 
-  return { ...scene, sounds };
+  // Whether the scene actually offers this effect is checked when it is resolved
+  const effect = isEffectPreset(params.get('effect')) ? params.get('effect') : '';
+
+  return { ...scene, sounds, effect };
 };

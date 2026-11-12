@@ -133,7 +133,9 @@
     padding: 10px 12px 12px;
   }
 
-  .dock-row { flex-wrap: wrap; gap: 10px; }
+  .dock-row { flex-wrap: wrap; gap: 8px; }
+
+  .play-button { width: 46px; height: 46px; }
 
   .dock-card {
     max-width: none;
@@ -141,6 +143,15 @@
     padding-right: 12px;
 
     &:first-child { flex-basis: 100%; }
+
+    // Sounds and weather share a row with the buttons, so they drop their label and shrink the icon
+    &:not(:first-child) {
+      gap: 8px;
+      padding: 6px 8px 6px 6px;
+
+      .dock-thumb { width: 30px; height: 30px; }
+      .dock-text small { display: none; }
+    }
   }
 
   .dock-thumb { width: 48px; height: 36px; }

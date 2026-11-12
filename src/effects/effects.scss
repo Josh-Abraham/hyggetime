@@ -1,0 +1,32 @@
+// Layers drawn over the scene video. They live inside .video-container, below the click layer,
+// edge gradients and controls, and never take pointer events.
+$fade: 1.5s;
+
+@keyframes effect-fade-in {
+  from { opacity: 0; }
+}
+
+.effect-canvas,
+.grade-frame,
+.grade-region {
+  position: absolute;
+  pointer-events: none;
+  transition: opacity $fade ease;
+  animation: effect-fade-in $fade ease;
+}
+
+.grade-frame {
+  inset: 0;
+}
+
+// Changes of light (low sun) ease in slowly rather than switching on
+.grade-slow {
+  animation-duration: 6s;
+}
+
+// Lightning sits over the rain and the grade, and only ever shows while a flash is animating
+.lightning-flash {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+}

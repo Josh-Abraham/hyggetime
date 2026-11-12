@@ -3,10 +3,10 @@ export const sceneUrls = {
   // Fall
   "Gothic Reading Nook": "https://www.youtube.com/watch?v=ZRqtJvn5NR0",
   "Autumn Witch's Apothecary": "https://www.youtube.com/watch?v=s0mx_YrjY58",
-  "The Witch's Apothecary": "https://www.youtube.com/watch?v=pGSQYleH5iM",
+  "The Witch's Apothecary": "https://www.youtube.com/watch?v=pGSQYleH5iM&t=10s",
   "Autumn Forest": "https://www.youtube.com/watch?v=IadsLclBOS8",
   "Peaceful Autumn Day At Hogwarts": "https://www.youtube.com/watch?v=xyyMe8qZE8E",
-  "Fall Coffee Shop": "https://www.youtube.com/watch?v=VMAPTo7RVCo&t=1287s",
+  "Fall Coffee Shop": "https://www.youtube.com/watch?v=VMAPTo7RVCo&t=35s",
   "Halloween Party": "https://www.youtube.com/watch?v=LmCg6V8e8Jw&t=42s",
   "Halloween Porch": "https://www.youtube.com/watch?v=cykFvQ2Y8sM&t=55s",
   "Autumn at Hogwarts": "https://www.youtube.com/watch?v=LYMAex9lSXA",
@@ -18,10 +18,10 @@ export const sceneUrls = {
   "Halloween at Hogwarts": "https://www.youtube.com/watch?v=pCRAnf1UCLA",
   "Hogwarts Forest": "https://www.youtube.com/watch?v=6t44YRHSF1Q",
   "Rainy Castle": "https://www.youtube.com/watch?v=l1_NvzdbewI",
-  "Stormy Night by the Sea": "https://www.youtube.com/watch?v=qkR8ANcettQ",
+  "Stormy Night by the Sea": "https://www.youtube.com/watch?v=qkR8ANcettQ&t=60s",
   // Winter
-  "Narnia Lamp-post in Snowfall": "https://www.youtube.com/watch?v=sKFzvOWVvHs",
-  "Christmas at Hogwarts - Walking": "https://www.youtube.com/watch?v=sSBUL1INwYw",
+  "Narnia Lamp-post in Snowfall": "https://www.youtube.com/watch?v=sKFzvOWVvHs&t=10s",
+  "Christmas at Hogwarts - Walking": "https://www.youtube.com/watch?v=sSBUL1INwYw&t=10s",
  
   "Winter Cabin": "https://www.youtube.com/watch?v=PXpERbbAvBs",
   "Winter Cabin - Jazz": "https://www.youtube.com/watch?v=gmmk7jbl86Y",
@@ -30,12 +30,12 @@ export const sceneUrls = {
   "Calm Winter Day at Hogwarts": "https://www.youtube.com/watch?v=yWkHBpTXb1E",
   "Magic Kingdom Christmas": "https://www.youtube.com/watch?v=jkoKk6CJL0g",
   "Magic Kingdom Christmas 2": "https://www.youtube.com/watch?v=t4GSiJx6Glo",
-  "Winter Ambience Drone Flyover": "https://www.youtube.com/watch?v=CUIdMusnugs",
+  "Winter Ambience Drone Flyover": "https://www.youtube.com/watch?v=CUIdMusnugs&t=20s",
  
   "The Yule Ball": "https://www.youtube.com/watch?v=tTfr-0qa3OQ",
   "Winter Chalet": "https://www.youtube.com/watch?v=111hKC_4LuY&t=234s",
   "Winter Coffee Shop": "https://www.youtube.com/watch?v=twM7ulKpPjI&t=323s",
-  "Winter Forest Walkthrough": "https://www.youtube.com/watch?v=OIQwYWRlXOY",
+  "Winter Forest Walkthrough": "https://www.youtube.com/watch?v=OIQwYWRlXOY&t=20s",
   // Spring
   "The Shire (Hobbiton)": "https://www.youtube.com/watch?v=Gke8g8JI2S4",
   
@@ -45,7 +45,7 @@ export const sceneUrls = {
   "Hogwarts Spring Walkthrough": "https://www.youtube.com/watch?v=GybMO_-77Xw",
   "Mountain View": "https://youtu.be/qRTVg8HHzUo?t=22",
   "Spring Cafe 1": "https://www.youtube.com/watch?v=hoX_NS0htBQ",
-  "Spring Cafe 2": "https://www.youtube.com/watch?v=-aL6ig2lxrE",
+  "Spring Cafe 2": "https://www.youtube.com/watch?v=-aL6ig2lxrE&t=15s",
  
   "Sunflower Meadow": "https://youtu.be/ipf7ifVSeDU?t=6",
   // Summer
@@ -59,7 +59,6 @@ export const sceneUrls = {
   "Summer Night": "https://www.youtube.com/watch?v=SN3xlcjbvUo&t=164s",
  
   "Summer Day at Hogwarts": "https://www.youtube.com/watch?v=CNw2r93p6xE",
-  "Summer Picnic": "https://www.youtube.com/watch?v=bK2IzclHhhg",
   "Tropical Beach": "https://www.youtube.com/watch?v=DGIXT7ce3vQ",
   "Waterfall": "https://www.youtube.com/watch?v=V1RPi2MYptM",
   // Disney
@@ -94,7 +93,7 @@ export const sceneUrls = {
   "Aquarium": "https://www.youtube.com/watch?v=W0u-7lgWXpw",
   "Coral Reef": "https://www.youtube.com/watch?v=tADnCEpbPI8",
   "Redwood Forest Soundscape": "https://www.youtube.com/watch?v=q9rQTB_Qr0A",
-  "Train Ride": "https://www.youtube.com/watch?v=Cec4Z-Vlf7Q",
+  "Train Ride": "https://www.youtube.com/watch?v=Cec4Z-Vlf7Q&t=10s",
   // Travel
   "Venice": "https://www.youtube.com/watch?v=T0z0BmXFqlo",
   "Iceland Flyover": "https://www.youtube.com/watch?v=mIv6X_KdGZw",
@@ -182,7 +181,6 @@ export const sceneGroups = [
       "Sea Turtles in Hawaii",
       "Summer Day at Hogwarts",
       "Summer Night",
-      "Summer Picnic",
       "Tropical Beach",
       "Waterfall",
     ],
@@ -230,6 +228,7 @@ export const sceneGroups = [
       "Christmas at Hogwarts - Walking",
       "Christmas Great Hall",
       "Diagon Alley Night",
+      "Fall Grounds at Hogwarts",
       "Gryffindor Common Room",
       "Halloween at Hogwarts",
       "Hogsmeade in Snow",

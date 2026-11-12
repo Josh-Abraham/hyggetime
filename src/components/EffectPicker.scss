@@ -1,0 +1,19 @@
+// A short list, so narrower than the sound mixer it borrows its look from
+.sound-mixer.effect-picker {
+  width: min(440px, calc(100vw - 32px));
+
+  .sound-mixer-body { padding-top: 16px; }
+  .sound-tile { height: 52px; }
+}
+
+// Weather and light rows, for scenes that offer both
+.effect-picker .effect-group-title {
+  margin: 0 0 10px;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  & ~ .effect-group-title { margin-top: 18px; }
+}
